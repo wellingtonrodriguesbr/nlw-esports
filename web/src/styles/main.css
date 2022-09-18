@@ -5,3 +5,10 @@
 body {
   @apply bg-[#121214];
 }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: #8b5cf6;
+  border-radius: 200px;
+  width: 4px;
+  height: 4px;
+}
