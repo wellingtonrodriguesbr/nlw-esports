@@ -31,7 +31,7 @@ export function App() {
 
   return (
     <div className="w-full h-screen bg-galaxy bg-no-repeat bg-cover">
-      <div className="max-w-[1344px] mx-auto flex flex-col items-center">
+      <div className="max-w-[1344px] mx-auto flex flex-col items-center pb-16">
         <img className="my-20" src={logoImg} alt="" />
         <h1 className="text-6xl text-white font-black">
           Seu{" "}
@@ -64,61 +64,91 @@ export function App() {
 
               <form className="mt-8 flex flex-col gap-4">
                 <div>
+                  <label
+                    className="text-white text-base font-bold block leading-6 mb-2"
+                    htmlFor="game"
+                  >
+                    Qual o game?
+                  </label>
                   <Input
                     id="game"
-                    labelText="Qual o game?"
                     type="text"
                     placeholder="Selecione o game que deseja jogar"
                   />
                 </div>
 
                 <div>
+                  <label
+                    className="text-white text-base font-bold block leading-6 mb-2"
+                    htmlFor="name"
+                  >
+                    Seu nome (ou nickname)
+                  </label>
                   <Input
                     id="name"
-                    labelText="Seu nome (ou nickname)"
                     type="text"
                     placeholder="Como te chamam dentro do game?"
                   />
                 </div>
 
-                <div className="flex gap-4">
+                <div className="grid grid-cols-2 gap-6">
                   <div>
+                    <label
+                      className="text-white text-base font-bold block leading-6 mb-2"
+                      htmlFor="yearsPlaying"
+                    >
+                      Joga há quantos anos?
+                    </label>
+
                     <Input
                       id="yearsPlaying"
-                      labelText="Joga há quantos anos?"
                       type="text"
                       placeholder="Tudo bem ser ZERO"
                     />
                   </div>
 
                   <div>
+                    <label
+                      className="text-white text-base font-bold block leading-6 mb-2"
+                      htmlFor="discord"
+                    >
+                      Qual seu Discord?
+                    </label>
                     <Input
                       id="discord"
-                      labelText="Qual seu Discord?"
                       type="text"
                       placeholder="Usuario#0000"
                     />
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div>
+                <div className="flex gap-6">
+                  <div className="flex flex-col gap-2">
                     <label
                       className="text-white text-base font-bold block leading-6 mb-2"
                       htmlFor="weekDays"
                     >
                       Quando costuma jogar?
                     </label>
+                    <div className="grid grid-cols-4 gap-1 gap-x-0">
+                      <button className="w-8 h-8 rounded bg-zinc-900">D</button>
+                      <button className="w-8 h-8 rounded bg-zinc-900">S</button>
+                      <button className="w-8 h-8 rounded bg-zinc-900">T</button>
+                      <button className="w-8 h-8 rounded bg-zinc-900">Q</button>
+                      <button className="w-8 h-8 rounded bg-zinc-900">Q</button>
+                      <button className="w-8 h-8 rounded bg-zinc-900">S</button>
+                      <button className="w-8 h-8 rounded bg-zinc-900">S</button>
+                    </div>
                   </div>
 
-                  <div>
+                  <div className="flex flex-1 flex-col gap-2">
                     <label
                       className="text-white text-base font-bold block leading-6 mb-2"
                       htmlFor="hourStart"
                     >
                       Qual horário do dia?
                     </label>
-                    <div className="flex gap-1">
+                    <div className="grid grid-cols-2 gap-2">
                       <Input id="hourStart" type="time" placeholder="De" />
                       <Input id="hourEnd" type="time" placeholder="Até" />
                     </div>
@@ -130,10 +160,18 @@ export function App() {
                   Costumo me conectar no canal de voz
                 </div>
 
-                <footer>
-                  <button>Cancelar</button>
-                  <button type="submit">
-                    <GameController />
+                <footer className="flex justify-end mt-4 gap-4">
+                  <Dialog.Close
+                    type="button"
+                    className="bg-zinc-500 px-5 h-12 rounded-md font-bold hover:bg-zinc-600"
+                  >
+                    Cancelar
+                  </Dialog.Close>
+                  <button
+                    type="submit"
+                    className="flex items-center gap-2 bg-violet-500 px-5 h-12 rounded-md font-bold hover:bg-violet-600"
+                  >
+                    <GameController weight="bold" size={24} />
                     Encontrar Duo
                   </button>
                 </footer>
