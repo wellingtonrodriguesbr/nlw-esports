@@ -31,10 +31,10 @@
 
 ```bash
 # Clonar o repositório
-$ git clone https://github.com/wellingtonrodriguesbr/esports.git
+$ git clone https://github.com/wellingtonrodriguesbr/nlw-esports.git
 
 # Entrar no diretório
-$ cd esports
+$ cd nlw-esports
 
 
 ## Instalar as dependências ##
